@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --page: #f3f3f1;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-proof: #edf1f5;
+  --ink-strong: #141618;
+  --ink-body: #2e3338;
+  --ink-muted: #5d666f;
+  --accent-deep: #cc0022;
+  --border-soft: rgba(20, 22, 24, 0.16);
+  --border-strong: rgba(20, 22, 24, 0.34);
+}
+
+@theme inline {
+  --color-background: var(--page);
+  --color-foreground: var(--ink-strong);
+  --font-sans: var(--font-sans);
+}
+
+body {
+  background: var(--page);
+  color: var(--ink-strong);
+  font-family: var(--font-sans), "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    linear-gradient(rgba(20, 22, 24, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 22, 24, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.panel {
+  border: 1px solid var(--border-soft);
+  border-radius: 0.4rem;
+  background: var(--surface);
+  box-shadow: 0 10px 24px rgba(20, 22, 24, 0.06);
+}
+
+.panel-proof {
+  background: var(--surface-proof);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.action-primary,
+.action-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3rem;
+  padding: 0.68rem 1rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition:
+    transform 220ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.action-primary {
+  background: var(--ink-strong);
+  color: #f6f7f8;
+}
+
+.action-secondary {
+  border: 1px solid var(--border-strong);
+  color: var(--ink-strong);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.action-primary:hover,
+.action-secondary:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

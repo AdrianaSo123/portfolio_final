@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Cloned reference repository used for analysis only
+docs/designsystem_source/
+
+# Next.js app build and deps
+site/node_modules/
+site/.next/
+site/out/
+site/.turbo/
+
+# Env files
+.env
+.env.*
