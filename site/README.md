@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Site
 
-## Getting Started
+This app lives in the `site` folder of a multi-folder workspace.
 
-First, run the development server:
+## Run Locally
+
+From the workspace root (`portfolio_final`):
 
 ```bash
+cd site
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If port 3000 is already in use, Next.js will choose another available port (for example 3001).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev`: start local development server
+- `npm run build`: create production build
+- `npm run start`: run production server
+- `npm run lint`: run ESLint (includes accessibility rules)
+- `npm run a11y:check`: run a quick Axe scan against the local homepage on port 3100 (includes a short render delay for stable results)
 
-## Learn More
+## Key Files
 
-To learn more about Next.js, take a look at the following resources:
+- `app/page.tsx`: homepage content and semantic structure
+- `app/globals.css`: theme tokens, typography, layout, and interaction styles
+- `lib/portfolio-brief.ts`: portfolio content model and data
+- `app/layout.tsx`: metadata, global font loading, and root layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Accessibility Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Includes keyboard-accessible skip link and focus-visible states for primary actions.
+- Reduced-motion preferences are respected.
+- Includes a repeatable Axe-based accessibility scan via `npm run a11y:check`.
 
-## Deploy on Vercel
+## Common Pitfall
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Running `npm run dev` from the workspace root (`portfolio_final`) fails because there is no `package.json` there.
+Always run commands from `portfolio_final/site`.

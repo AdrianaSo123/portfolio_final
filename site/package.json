@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "start:a11y": "next start -p 3100",
+    "lint": "eslint .",
+    "a11y:check": "start-server-and-test start:a11y http://localhost:3100 \"axe http://localhost:3100 --exit --load-delay 2000\""
   },
   "dependencies": {
     "next": "16.2.3",
@@ -14,12 +16,15 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@axe-core/cli": "^4.11.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "start-server-and-test": "^3.0.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

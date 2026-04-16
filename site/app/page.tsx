@@ -1,252 +1,155 @@
-import { ProofCard } from "@/components/proof-card";
-import { SectionHeading } from "@/components/section-heading";
+import { RevealSection } from "@/components/reveal-section";
 import { portfolioBrief } from "@/lib/portfolio-brief";
 
 export default function Home() {
   const brief = portfolioBrief;
+  const showcaseProjects = brief.projects.slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-[var(--page)] text-[var(--ink-strong)]">
+    <div className="swiss-page">
       <a
         href="#main-content"
-        className="absolute left-4 top-4 z-50 -translate-y-24 rounded-full bg-[var(--ink-strong)] px-4 py-2 text-sm font-semibold text-white transition focus:translate-y-0"
+        className="skip-link"
       >
         Skip to content
       </a>
 
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(180deg,rgba(243,243,241,0.97),rgba(240,240,238,0.99))]" />
+      <main id="main-content" tabIndex={-1} className="swiss-shell">
+        <header className="swiss-topline">
+          <p>{brief.role}</p>
+          <p>{brief.location}</p>
+          <p>{brief.availability}</p>
+        </header>
 
-      <main
-        id="main-content"
-        tabIndex={-1}
-        className="mx-auto flex w-full max-w-7xl flex-col gap-16 px-5 pb-20 pt-8 sm:px-8 md:px-10 lg:px-12"
-      >
-        <section className="panel px-5 py-4 sm:px-6">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex flex-wrap items-center gap-3 text-[0.72rem] uppercase tracking-[0.18em] text-[var(--ink-muted)]">
-              <span>{brief.ownerName}</span>
-              <span className="h-1 w-1 rounded-full bg-[var(--accent-deep)]" />
-              <span>{brief.location}</span>
+        <RevealSection className="swiss-hero" delayMs={0}>
+          <div>
+            <p className="eyebrow">AI Systems Portfolio</p>
+            <h1 className="swiss-claim">{brief.headline}</h1>
+            <p className="swiss-lede">{brief.intro}</p>
+            <div className="action-row">
+              <a href="#systems" className="action-primary">
+                View systems
+              </a>
+              <a href="#contact" className="action-secondary">
+                Start a conversation
+              </a>
+              <a
+                href={brief.profiles.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="action-secondary"
+              >
+                LinkedIn
+              </a>
             </div>
-            <p className="text-[0.72rem] uppercase tracking-[0.18em] text-[var(--ink-muted)]">
-              {brief.availability}
-            </p>
           </div>
-        </section>
 
-        <section className="panel p-6 sm:p-8">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
-            <div>
-              <p className="eyebrow text-[var(--accent-deep)]">{brief.role}</p>
-              <h1 className="mt-4 max-w-4xl text-5xl font-bold leading-[0.93] tracking-[-0.03em] text-balance sm:text-6xl xl:text-7xl">
-                {brief.headline}
-              </h1>
-              <p className="mt-6 max-w-2xl text-[1.06rem] leading-8 text-[var(--ink-body)]">
-                {brief.intro}
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <a href="#proof" className="action-primary">
-                  {brief.secondaryCta}
-                </a>
-                <a href="#contact" className="action-secondary">
-                  {brief.primaryCta}
-                </a>
-                <a
-                  href={brief.profiles.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="action-secondary"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href={brief.profiles.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="action-secondary"
-                >
-                  GitHub
-                </a>
+          <div className="hero-stage">
+            <p className="eyebrow">Operating claim</p>
+            <h2>{brief.claim}</h2>
+            <div className="hero-stage-grid">
+              <div>
+                <p className="eyebrow">Archetype</p>
+                <p>{brief.archetype}</p>
+              </div>
+              <div>
+                <p className="eyebrow">Signal</p>
+                <p>{brief.signal}</p>
               </div>
             </div>
-
-            <aside className="border border-[var(--border-soft)] bg-white/88 p-5">
-              <p className="eyebrow text-[var(--accent-deep)]">Operating claim</p>
-              <p className="mt-3 text-3xl font-bold leading-[1.04] tracking-[-0.02em] text-[var(--ink-strong)]">
-                {brief.claim}
-              </p>
-              <div className="mt-6 grid gap-3">
-                <div className="border border-[var(--border-soft)] bg-[#f7f7f5] px-3 py-3">
-                  <p className="eyebrow text-[var(--accent-deep)]">Archetype</p>
-                  <p className="mt-2 text-lg font-semibold text-[var(--ink-strong)]">
-                    {brief.archetype}
-                  </p>
-                </div>
-                <div className="border border-[var(--border-soft)] bg-[#f7f7f5] px-3 py-3">
-                  <p className="eyebrow text-[var(--accent-deep)]">Signal</p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--ink-body)]">{brief.signal}</p>
-                </div>
-              </div>
-            </aside>
           </div>
-        </section>
+        </RevealSection>
 
-        <section className="grid gap-4 md:grid-cols-3">
+        <RevealSection className="metric-strip" ariaLabel="Selected metrics" delayMs={40}>
           {brief.metrics.map((metric) => (
-            <article key={metric.label} className="panel p-5">
-              <p className="text-4xl font-bold leading-none tracking-[-0.03em] text-[var(--accent-deep)] sm:text-5xl">
-                {metric.value}
-              </p>
-              <p className="mt-3 text-sm leading-6 text-[var(--ink-body)]">{metric.label}</p>
+            <article key={metric.label} className="metric-card">
+              <p className="metric-value">{metric.value}</p>
+              <p className="metric-label">{metric.label}</p>
             </article>
           ))}
-        </section>
+        </RevealSection>
 
-        <section>
-          <p className="eyebrow mb-4 text-[var(--ink-muted)]">01 Brief</p>
-          <SectionHeading
-            eyebrow="Audience"
-            title="Built for fast-moving startup operators who need leverage now"
-            body={brief.audience}
-          />
-          <div className="mt-6 panel p-6">
-            <p className="text-[1.02rem] leading-8 text-[var(--ink-body)]">
-              {brief.oneLiner}
-            </p>
-            <p className="eyebrow text-[var(--accent-deep)]">Core need</p>
-            <p className="mt-3 text-[1.02rem] leading-8 text-[var(--ink-body)]">{brief.need}</p>
-            <p className="mt-4 text-sm leading-7 text-[var(--ink-muted)]">
-              Product signal: {brief.signal}
-            </p>
-          </div>
-        </section>
-
-        <section id="proof" className="space-y-6">
-          <p className="eyebrow mb-1 text-[var(--ink-muted)]">02 Proof</p>
-          <SectionHeading
-            eyebrow="Immediate proof"
-            title="Claim first, then evidence"
-            body="The page leads with one operating claim and validates it with three concrete proof blocks from execution contexts."
-          />
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {brief.proofBlocks.map((item) => (
-              <ProofCard key={item.title} item={item} />
+        <RevealSection delayMs={80}>
+          <p className="section-kicker">How I work</p>
+          <h2 className="section-title">Build trust by structuring ambiguity first.</h2>
+          <div className="work-grid">
+            {brief.principles.map((principle) => (
+              <article key={principle.title} className="principle-card">
+                <h3>{principle.title}</h3>
+                <p>{principle.summary}</p>
+              </article>
             ))}
           </div>
-        </section>
+        </RevealSection>
 
-        <section className="grid gap-6 lg:grid-cols-[0.66fr_0.34fr] lg:items-start">
-          <article className="panel p-6">
-            <p className="eyebrow text-[var(--accent-deep)]">How I work</p>
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
-              {brief.principles.map((principle) => (
-                <div key={principle.title} className="border border-[var(--border-soft)] bg-white/70 p-4">
-                  <h3 className="text-2xl font-bold leading-[1.04] tracking-[-0.02em] text-[var(--ink-strong)]">
-                    {principle.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-[var(--ink-body)]">{principle.summary}</p>
+        <RevealSection className="quote-strip" ariaLabel="Faculty note" delayMs={120}>
+          <figure>
+            <figcaption className="eyebrow">Faculty note</figcaption>
+            <blockquote className="quote-strip-text">
+              <p>&ldquo;{brief.quote.quote}&rdquo;</p>
+            </blockquote>
+            <p className="quote-strip-byline">
+              {brief.quote.attribution} • {brief.quote.role}
+            </p>
+          </figure>
+        </RevealSection>
+
+        <RevealSection id="systems" delayMs={160}>
+          <p className="section-kicker">Selected systems</p>
+          <h2 className="section-title">
+            Selected projects where architecture, reliability, and delivery had to hold up under real constraints.
+          </h2>
+          <div className="campaign-grid">
+            {showcaseProjects.map((project) => (
+              <article key={project.title} className="campaign-card">
+                <div className="project-visual" aria-hidden="true">
+                  <p className="eyebrow">{project.label}</p>
                 </div>
-              ))}
-            </div>
-          </article>
-
-          <aside className="panel border-[var(--accent-deep)] bg-[var(--ink-strong)] p-6 text-white">
-            <p className="eyebrow text-[#ff6a7a]">Leadership signal</p>
-            <p className="mt-4 text-2xl font-bold leading-[1.1] tracking-[-0.02em]">
-              “{brief.quote.quote}”
-            </p>
-            <p className="mt-5 text-xs uppercase tracking-[0.16em] text-[#ff97a3]">
-              {brief.quote.attribution}
-            </p>
-            <p className="mt-1 text-sm text-[#ffe6ea]">{brief.quote.role}</p>
-          </aside>
-        </section>
-
-        <section className="space-y-6">
-          <p className="eyebrow mb-1 text-[var(--ink-muted)]">03 Experience</p>
-          <SectionHeading
-            eyebrow="Work experience"
-            title="Enterprise ambiguity translated into deployable systems"
-            body={`${brief.workExperience.role} at ${brief.workExperience.company} (${brief.workExperience.period})`}
-          />
-          <article className="panel p-6">
-            <p className="text-sm leading-6 text-[var(--ink-muted)]">{brief.workExperience.location}</p>
-            <ul className="mt-4 space-y-3">
-              {brief.workExperience.highlights.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-2xl border border-[var(--border-soft)] bg-white/60 px-4 py-3 text-[0.98rem] leading-7 text-[var(--ink-body)]"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
-        </section>
-
-        <section className="space-y-6">
-          <p className="eyebrow mb-1 text-[var(--ink-muted)]">04 Systems</p>
-          <SectionHeading
-            eyebrow="AI systems engineering"
-            title="Selected systems where architecture, reliability, and delivery all had to hold"
-            body="Each project pairs business context with system constraints, then demonstrates implementation-level outcomes and proof artifacts."
-          />
-          <div className="space-y-6">
-            {brief.projects.map((project, index) => (
-              <article key={project.title} className="panel panel-proof p-5 sm:p-6">
-                <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-start">
-                  <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                    <div className="border border-[var(--border-soft)] bg-[linear-gradient(135deg,#ffffff,#eef2f6)] p-6">
-                      <p className="eyebrow text-[var(--accent-deep)]">{project.label}</p>
-                      <h3 className="mt-3 text-3xl font-bold leading-[1.03] tracking-[-0.02em] text-[var(--ink-strong)] sm:text-4xl">
-                        {project.title}
-                      </h3>
-                      <p className="mt-3 text-[0.98rem] leading-7 text-[var(--ink-body)]">{project.summary}</p>
-                      <p className="mt-4 text-xs uppercase tracking-[0.14em] text-[var(--ink-muted)]">{project.stack}</p>
-                    </div>
+                <div className="project-content">
+                  <h3>{project.title}</h3>
+                  <p className="project-summary">{project.summary}</p>
+                  <p className="project-stack">{project.stack}</p>
+                  <div className="project-action-row">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="action-primary"
+                    >
+                      View Live System
+                    </a>
+                    <a
+                      href={project.architectureUrl ?? brief.profiles.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="action-secondary"
+                    >
+                      {project.architectureUrl ? "View Architecture" : "View GitHub"}
+                    </a>
                   </div>
-
-                  <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <div className="border border-[var(--border-soft)] bg-white/75 p-4">
-                        <p className="eyebrow text-[var(--accent-deep)]">Outcome</p>
-                        <p className="mt-2 text-sm leading-6 text-[var(--ink-body)]">{project.outcome}</p>
-                      </div>
-                      <div className="border border-[var(--border-soft)] bg-white/75 p-4">
-                        <p className="eyebrow text-[var(--accent-deep)]">Proof</p>
-                        <p className="mt-2 text-sm leading-6 text-[var(--ink-body)]">{project.proof}</p>
-                      </div>
+                  <div className="project-proof-grid">
+                    <div>
+                      <p className="eyebrow">Outcome</p>
+                      <p>{project.outcome}</p>
                     </div>
-                    <ul className="mt-4 space-y-2">
-                      {project.outcomes.map((outcome) => (
-                        <li
-                          key={outcome}
-                          className="border border-[var(--border-soft)] bg-white/65 px-3 py-2 text-sm leading-6 text-[var(--ink-body)]"
-                        >
-                          {outcome}
-                        </li>
-                      ))}
-                    </ul>
+                    <div>
+                      <p className="eyebrow">Proof system</p>
+                      <p>{project.proof}</p>
+                    </div>
                   </div>
                 </div>
               </article>
             ))}
           </div>
-        </section>
+        </RevealSection>
 
-        <section id="contact" className="panel p-6 sm:p-8">
-          <p className="eyebrow mb-1 text-[var(--ink-muted)]">05 Contact</p>
-          <p className="eyebrow text-[var(--accent-deep)]">Next step</p>
-          <h2 className="mt-3 text-4xl font-bold leading-[1.02] tracking-[-0.02em] text-balance sm:text-5xl">
-            If you have a messy, high-value workflow, I can turn it into a
-            reliable AI operating system.
+        <RevealSection id="contact" className="contact-panel" delayMs={200}>
+          <p className="section-kicker">Looking for</p>
+          <h2 className="section-title">
+            Startup teams that need an AI systems builder who can carry work from messy brief to reliable production workflow.
           </h2>
-          <p className="mt-5 max-w-3xl text-[1.02rem] leading-8 text-[var(--ink-body)]">
-            Share one repetitive process your team currently handles manually.
-            I will map inputs, output format, edge cases, and rollout approach
-            into a practical system blueprint.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <p className="section-body section-body-tight">{brief.need}</p>
+          <div className="action-row">
             <a
               href={brief.profiles.linkedin}
               target="_blank"
@@ -261,13 +164,19 @@ export default function Home() {
               rel="noreferrer"
               className="action-secondary"
             >
-              View GitHub profile
+              View GitHub
             </a>
-            <a href="#proof" className="action-secondary">
-              Revisit proof blocks
+            <a href="#systems" className="action-secondary">
+              Revisit systems
             </a>
           </div>
-        </section>
+        </RevealSection>
+
+        <footer className="swiss-footer">
+          <p>{brief.ownerName}</p>
+          <p>{brief.location}</p>
+          <p>{brief.availability}</p>
+        </footer>
       </main>
     </div>
   );

@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, IBM_Plex_Mono, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-sans",
+const sourceSans = Source_Sans_3({
+  variable: "--font-body",
+  subsets: ["latin"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-display",
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${sourceSans.variable} ${cormorant.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
