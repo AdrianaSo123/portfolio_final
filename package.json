@@ -3,9 +3,6 @@
   "private": true,
   "scripts": {
     "dev": "npm --prefix site run dev",
-    "build": "npm --prefix site run build",
-    "start": "npm --prefix site run start",
-    "lint": "npm --prefix site run lint",
-    "a11y:check": "npm --prefix site run a11y:check"
+    "lint": "npm --prefix site run lint"
   }
 }
