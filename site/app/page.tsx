@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { RevealSection } from "@/components/reveal-section";
 import { portfolioBrief } from "@/lib/portfolio-brief";
 
@@ -44,19 +45,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-stage">
-            <p className="eyebrow">Operating claim</p>
-            <h2>{brief.claim}</h2>
-            <div className="hero-stage-grid">
-              <div>
-                <p className="eyebrow">Archetype</p>
-                <p>{brief.archetype}</p>
-              </div>
-              <div>
-                <p className="eyebrow">Signal</p>
-                <p>{brief.signal}</p>
-              </div>
-            </div>
+          <div className="hero-image-stage">
+            <Image
+              src="/hero-operating-claim.png"
+              alt="Adriana So sketching workflow logic on glass while holding a tablet"
+              fill
+              sizes="(max-width: 1080px) 100vw, 50vw"
+              quality={75}
+              className="hero-image"
+              priority
+            />
           </div>
         </RevealSection>
 

@@ -101,8 +101,8 @@ export const portfolioBrief = {
         "Reduced research synthesis from hours to minutes while keeping outputs structured and reviewable.",
       proof:
         "Multi-format ingestion, async processing APIs, persona/theme clustering, and interactive result visualization.",
-      liveUrl: "https://github.com/AdrianaSo123",
-      architectureUrl: "https://github.com/AdrianaSo123",
+      liveUrl: "https://so-kind-research.vercel.app",
+      architectureUrl: "https://github.com/AdrianaSo123/soKind_research",
       outcomes: [
         "Supported multi-format ingestion (.txt, .docx, .pdf) with async RESTful processing.",
         "Engineered persona generation, theme extraction, and clustering logic to reduce synthesis time from hours to minutes.",

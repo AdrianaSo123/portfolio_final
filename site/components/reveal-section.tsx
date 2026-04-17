@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
 
 type RevealSectionProps = {
@@ -45,15 +46,17 @@ export function RevealSection({
     return () => observer.disconnect();
   }, []);
 
+  const revealStyle = {
+    ["--reveal-delay"]: `${delayMs}ms`,
+  } as CSSProperties;
+
   return (
     <section
       ref={ref}
       id={id}
       aria-label={ariaLabel}
       className={`reveal-section ${isVisible ? "is-visible" : ""} ${className ?? ""}`.trim()}
-      style={{
-        ["--reveal-delay" as string]: `${delayMs}ms`,
-      }}
+      style={revealStyle}
     >
       {children}
     </section>
