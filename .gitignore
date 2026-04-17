@@ -5,6 +5,7 @@
 docs/designsystem_source/
 
 # Next.js app build and deps
+node_modules/
 site/node_modules/
 site/.next/
 site/out/
