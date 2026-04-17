@@ -4,6 +4,11 @@
   "workspaces": [
     "site"
   ],
+  "dependencies": {
+    "next": "16.2.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
   "scripts": {
     "postinstall": "npm --prefix site install",
     "dev": "npm --prefix site run dev",
