@@ -92,39 +92,21 @@ export const portfolioBrief = {
       ],
     },
     {
-      title: "UX Research Synthesizer",
-      label: "Full-stack AI synthesis platform",
-      stack: "Next.js, React, TypeScript, OpenAI GPT-4 API",
+      title: "OpsAI Workflow Automation Engine",
+      label: "AI-powered operations platform",
+      stack: "Python, FastAPI, Pydantic, OpenAI API, Docker",
       summary:
-        "Developed a full-stack UX research synthesis system that transforms unstructured files into structured insights.",
+        "Designed a FastAPI-based workflow automation service that executes and validates operational tasks using AI orchestration.",
       outcome:
-        "Reduced research synthesis from hours to minutes while keeping outputs structured and reviewable.",
+        "Automated manual operational workflows with structured logging and high test coverage.",
       proof:
-        "Multi-format ingestion, async processing APIs, persona/theme clustering, and interactive result visualization.",
-      liveUrl: "https://so-kind-research.vercel.app",
-      architectureUrl: "https://github.com/AdrianaSo123/soKind_research",
+        "Modular service architecture, pluggable workflow engine, and robust error mapping for AI integrations.",
+      liveUrl: "https://github.com/AdrianaSo123/ai_operations_engine",
+      architectureUrl: "https://github.com/AdrianaSo123/ai_operations_engine",
       outcomes: [
-        "Supported multi-format ingestion (.txt, .docx, .pdf) with async RESTful processing.",
-        "Engineered persona generation, theme extraction, and clustering logic to reduce synthesis time from hours to minutes.",
-        "Designed an accessible Tailwind-based interface to present outputs through interactive visualizations.",
-      ],
-    },
-    {
-      title: "AWS Serverless Operations Pipeline",
-      label: "Cloud-native automation system",
-      stack: "AWS Lambda, S3, DynamoDB, EventBridge, Python, Terraform",
-      summary:
-        "Built an AWS serverless pipeline that ingests operational files, validates payloads, and triggers structured downstream processing without manual coordination.",
-      outcome:
-        "Reduced manual handling bottlenecks and enabled reliable event-driven processing for recurring operations workflows.",
-      proof:
-        "Infrastructure as code, event-driven orchestration, CloudWatch observability, and schema-based validation at ingestion boundaries.",
-      liveUrl: "https://github.com/AdrianaSo123",
-      architectureUrl: "https://github.com/AdrianaSo123",
-      outcomes: [
-        "Implemented event-driven orchestration with EventBridge and Lambda to process uploads automatically from S3 triggers.",
-        "Added DynamoDB-backed job state tracking and CloudWatch logging for traceable operations and failure recovery.",
-        "Provisioned core infrastructure through Terraform to make deployments reproducible across environments.",
+        "Engineered a FastAPI service with typed request/response models for reliable workflow execution.",
+        "Implemented an AI integration layer with automated retries, error mapping, and result validation.",
+        "Containerized the engine for scalable deployment and achieved high coverage through automated unit and integration tests.",
       ],
     },
     {
@@ -143,23 +125,6 @@ export const portfolioBrief = {
         "Engineered a multi-stage pipeline (audio to transcription to LLM to validation to publishing).",
         "Built chat UX with dynamic suggestion chips for guided exploration.",
         "Implemented authentication-gated tool access for admin-only capabilities.",
-      ],
-    },
-    {
-      title: "Modular AI Agent Toolkit",
-      label: "CLI research and evaluation framework",
-      stack: "Python, OpenAI API, Playwright",
-      summary:
-        "Developed a CLI-based modular toolkit for structured research, standardized evaluations, and artifact capture.",
-      outcome:
-        "Improved consistency of agent task execution and reduced output variance during experimentation.",
-      proof:
-        "Scoped delegation logic, structured prompts, and output validation layers to reduce hallucination risk.",
-      liveUrl: "https://github.com/AdrianaSo123",
-      architectureUrl: "https://github.com/AdrianaSo123",
-      outcomes: [
-        "Implemented scoped task delegation and structured prompt layers.",
-        "Added output validation patterns to improve reliability and reduce hallucination risk.",
       ],
     },
   ] as const satisfies readonly ResumeProject[],
