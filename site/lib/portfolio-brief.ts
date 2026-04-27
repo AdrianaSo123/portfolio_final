@@ -75,6 +75,24 @@ export const portfolioBrief = {
   },
   projects: [
     {
+      title: "Business Document Intelligence System",
+      label: "Enterprise Document Workflow Engine",
+      stack: "Python, FastAPI, OpenAI, Celery, Redis",
+      summary:
+        "Production-grade AI system that transforms unstructured business documents into structured insights using Clean Architecture.",
+      outcome:
+        "Automated document processing with PII sanitization and high-confidence data extraction.",
+      proof:
+        "Hexagonal architecture, comprehensive evaluation layer, and circuit breaker resilience.",
+      liveUrl: "https://github.com/AdrianaSo123/document_intelligence_system",
+      architectureUrl: "https://github.com/AdrianaSo123/document_intelligence_system",
+      outcomes: [
+        "Implemented PII sanitization and deterministic normalization for reliable data extraction.",
+        "Built a resilient pipeline with circuit breakers, retries, and automated evaluation benchmarking.",
+        "Architected the system using Ports and Adapters (Hexagonal) pattern for strict separation of concerns.",
+      ],
+    },
+    {
       title: "AI Landscape Intelligence and Monitoring Pipeline",
       label: "Data ingestion and structuring system",
       stack: "Python, OpenAI API, Docker",

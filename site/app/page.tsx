@@ -45,17 +45,20 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-image-stage">
-            <Image
-              src="/hero-operating-claim.png"
-              alt="Adriana So sketching workflow logic on glass while holding a tablet"
-              fill
-              sizes="(max-width: 1080px) 100vw, 50vw"
-              quality={75}
-              className="hero-image"
-              priority
-            />
+          <div className="hero-image-stage portrait-mode">
+            <div className="portrait-container">
+              <Image
+                src="/portrait.png"
+                alt="Portrait of Adriana So"
+                fill
+                sizes="(max-width: 1080px) 100vw, 50vw"
+                quality={90}
+                className="hero-image portrait"
+                priority
+              />
+            </div>
           </div>
+
         </RevealSection>
 
         <RevealSection className="metric-strip" ariaLabel="Selected metrics" delayMs={40}>
@@ -98,8 +101,11 @@ export default function Home() {
             Selected projects where architecture, reliability, and delivery had to hold up under real constraints.
           </h2>
           <div className="campaign-grid">
-            {showcaseProjects.map((project) => (
-              <article key={project.title} className="campaign-card">
+            {showcaseProjects.map((project, index) => (
+              <article
+                key={project.title}
+                className={`campaign-card ${index % 2 === 1 ? "campaign-card-alt" : ""}`}
+              >
                 <div className="project-visual" aria-hidden="true">
                   <p className="eyebrow">{project.label}</p>
                 </div>
@@ -173,7 +179,9 @@ export default function Home() {
         <footer className="swiss-footer">
           <p>{brief.ownerName}</p>
           <p>{brief.location}</p>
-          <p>{brief.availability}</p>
+          <a href="#main-content" className="back-to-top">
+            Back to top ↑
+          </a>
         </footer>
       </main>
     </div>
