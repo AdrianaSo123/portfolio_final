@@ -73,13 +73,13 @@ body {
 }
 
 .reveal-section {
-  transform: translateY(8px);
-  transition: transform 200ms ease;
+  opacity: 0;
+  transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
 .reveal-section.is-visible {
-  transform: translateY(0);
+  opacity: 1;
 }
 
 .swiss-topline,
@@ -345,6 +345,7 @@ body {
 .campaign-card {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
+  align-items: stretch;
   border: 1px solid var(--border-soft);
   background: rgba(253, 250, 246, 0.95);
   backdrop-filter: blur(20px);
@@ -375,14 +376,16 @@ body {
 }
 
 .project-visual {
-  padding: 2rem;
+  padding: 0;
   background-color: var(--surface);
   background-image: radial-gradient(var(--border-soft) 1px, transparent 1px);
   background-size: 20px 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
   text-align: center;
+  height: 100%;
+  min-height: 100%;
 }
 
 .project-visual .eyebrow {

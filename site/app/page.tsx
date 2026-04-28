@@ -26,6 +26,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">AI Systems Portfolio</p>
             <h1 className="swiss-claim">{brief.headline}</h1>
+            <p className="tagline" style={{fontSize: '1.15rem', fontWeight: 500, color: 'var(--ink-body)', margin: '1.1rem 0 0.5rem 0'}}>From ambiguity to action—transforming messy ideas into reliable, working AI.</p>
             <p className="swiss-lede">{brief.intro}</p>
             <div className="action-row">
               <a href="#systems" className="action-primary">
@@ -95,7 +96,20 @@ export default function Home() {
                 className={`campaign-card ${index % 2 === 1 ? "campaign-card-alt" : ""}`}
               >
                 <div className="project-visual" aria-hidden="true">
-                  <p className="eyebrow">{project.label}</p>
+                  {project.title === "Business Document Intelligence System" ? (
+                    <div style={{width: '100%', height: '280px', position: 'relative', background: '#f7f3ed', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                      <Image
+                        src="/enterprise-document.png"
+                        alt="Enterprise Document Workflow Engine visual"
+                        fill
+                        sizes="(max-width: 900px) 100vw, 40vw"
+                        style={{objectFit: 'contain', objectPosition: 'center center', background: '#f7f3ed', borderRadius: 0}}
+                        priority
+                      />
+                    </div>
+                  ) : (
+                    <p className="eyebrow">{project.label}</p>
+                  )}
                 </div>
                 <div className="project-content">
                   <h3>{project.title}</h3>
