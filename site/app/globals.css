@@ -29,7 +29,7 @@
 }
 
 body {
-  background: radial-gradient(circle at top left, #ffffff, var(--page) 60%);
+  background: var(--page);
   color: var(--ink-strong);
   font-family: var(--font-body), "Helvetica Neue", sans-serif;
   text-rendering: optimizeLegibility;
@@ -221,8 +221,9 @@ body {
 
 .metric-card {
   border: 1px solid var(--border-soft);
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(253, 250, 246, 0.95);
   backdrop-filter: blur(16px);
+  box-shadow: 0 6px 24px 0 rgba(39, 58, 136, 0.13);
   padding: var(--space-md);
   border-radius: var(--radius-lg);
 }
@@ -283,8 +284,9 @@ body {
 .principle-card {
   border: 1px solid var(--border-soft);
   border-top: 3px solid var(--accent-deep);
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(253, 250, 246, 0.95);
   backdrop-filter: blur(16px);
+  box-shadow: 0 6px 24px 0 rgba(39, 58, 136, 0.13);
   padding: var(--space-md);
   border-radius: var(--radius-lg);
 }
@@ -344,8 +346,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   border: 1px solid var(--border-soft);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(253, 250, 246, 0.95);
   backdrop-filter: blur(20px);
+  box-shadow: 0 6px 24px 0 rgba(39, 58, 136, 0.13);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform 400ms cubic-bezier(0.2, 0, 0, 1), box-shadow 400ms ease;
@@ -373,7 +376,7 @@ body {
 
 .project-visual {
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: var(--surface);
   background-image: radial-gradient(var(--border-soft) 1px, transparent 1px);
   background-size: 20px 20px;
   display: flex;
@@ -449,8 +452,9 @@ body {
 .contact-panel {
   border: 1px solid var(--border-soft);
   border-left: 4px solid var(--accent-deep);
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(253, 250, 246, 0.95);
   backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px 0 rgba(39, 58, 136, 0.13);
   padding: 3.5rem;
   border-radius: 3.5rem;
   margin-top: 4rem;

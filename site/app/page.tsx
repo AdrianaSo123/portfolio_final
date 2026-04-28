@@ -45,19 +45,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-image-stage portrait-mode">
-            <div className="portrait-container">
-              <Image
-                src="/portrait.png"
-                alt="Portrait of Adriana So"
-                fill
-                sizes="(max-width: 1080px) 100vw, 50vw"
-                quality={90}
-                className="hero-image portrait"
-                priority
-              />
-            </div>
-          </div>
+          {/* Profile image temporarily removed */}
 
         </RevealSection>
 
