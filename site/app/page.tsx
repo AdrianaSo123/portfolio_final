@@ -1,5 +1,9 @@
-import Image from "next/image";
 import { RevealSection } from "@/components/reveal-section";
+import { ActionLink } from "@/components/action-link";
+import { MetricCard } from "@/components/metric-card";
+import { PrincipleCard } from "@/components/principle-card";
+import { ProjectCard } from "@/components/project-card";
+import { SectionHeader } from "@/components/section-header";
 import { portfolioBrief } from "@/lib/portfolio-brief";
 
 export default function Home() {
@@ -8,10 +12,7 @@ export default function Home() {
 
   return (
     <div className="swiss-page">
-      <a
-        href="#main-content"
-        className="skip-link"
-      >
+      <a href="#main-content" className="skip-link">
         Skip to content
       </a>
 
@@ -26,48 +27,41 @@ export default function Home() {
           <div>
             <p className="eyebrow">AI Systems Portfolio</p>
             <h1 className="swiss-claim">{brief.headline}</h1>
-            <p className="tagline" style={{fontSize: '1.15rem', fontWeight: 500, color: 'var(--ink-body)', margin: '1.1rem 0 0.5rem 0'}}>From ambiguity to action—transforming messy ideas into reliable, working AI.</p>
+            <p className="tagline">
+              From ambiguity to action—transforming messy ideas into reliable, working AI.
+            </p>
             <p className="swiss-lede">{brief.intro}</p>
             <div className="action-row">
-              <a href="#systems" className="action-primary">
+              <ActionLink href="#systems" variant="primary">
                 View systems
-              </a>
-              <a href="#contact" className="action-secondary">
+              </ActionLink>
+              <ActionLink href="#contact" variant="secondary">
                 Start a conversation
-              </a>
-              <a
-                href={brief.profiles.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="action-secondary"
-              >
+              </ActionLink>
+              <ActionLink href={brief.profiles.linkedin} external variant="secondary">
                 LinkedIn
-              </a>
+              </ActionLink>
             </div>
           </div>
 
           {/* Profile image temporarily removed */}
-
         </RevealSection>
 
         <RevealSection className="metric-strip" ariaLabel="Selected metrics" delayMs={40}>
           {brief.metrics.map((metric) => (
-            <article key={metric.label} className="metric-card">
-              <p className="metric-value">{metric.value}</p>
-              <p className="metric-label">{metric.label}</p>
-            </article>
+            <MetricCard key={metric.label} value={metric.value} label={metric.label} />
           ))}
         </RevealSection>
 
         <RevealSection delayMs={80}>
-          <p className="section-kicker">How I work</p>
-          <h2 className="section-title">Build trust by structuring ambiguity first.</h2>
+          <SectionHeader kicker="How I work" title="Build trust by structuring ambiguity first." />
           <div className="work-grid">
             {brief.principles.map((principle) => (
-              <article key={principle.title} className="principle-card">
-                <h3>{principle.title}</h3>
-                <p>{principle.summary}</p>
-              </article>
+              <PrincipleCard
+                key={principle.title}
+                title={principle.title}
+                summary={principle.summary}
+              />
             ))}
           </div>
         </RevealSection>
@@ -85,96 +79,39 @@ export default function Home() {
         </RevealSection>
 
         <RevealSection id="systems" delayMs={160}>
-          <p className="section-kicker">Selected systems</p>
-          <h2 className="section-title">
-            Selected projects where architecture, reliability, and delivery had to hold up under real constraints.
-          </h2>
+          <SectionHeader
+            kicker="Selected systems"
+            title="Selected projects where architecture, reliability, and delivery had to hold up under real constraints."
+          />
           <div className="campaign-grid">
             {showcaseProjects.map((project, index) => (
-              <article
+              <ProjectCard
                 key={project.title}
-                className={`campaign-card ${index % 2 === 1 ? "campaign-card-alt" : ""}`}
-              >
-                <div className="project-visual" aria-hidden="true">
-                  {project.title === "Business Document Intelligence System" ? (
-                    <div style={{width: '100%', height: '280px', position: 'relative', background: '#f7f3ed', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                      <Image
-                        src="/enterprise-document.png"
-                        alt="Enterprise Document Workflow Engine visual"
-                        fill
-                        sizes="(max-width: 900px) 100vw, 40vw"
-                        style={{objectFit: 'contain', objectPosition: 'center center', background: '#f7f3ed', borderRadius: 0}}
-                        priority
-                      />
-                    </div>
-                  ) : (
-                    <p className="eyebrow">{project.label}</p>
-                  )}
-                </div>
-                <div className="project-content">
-                  <h3>{project.title}</h3>
-                  <p className="project-summary">{project.summary}</p>
-                  <p className="project-stack">{project.stack}</p>
-                  <div className="project-action-row">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="action-primary"
-                    >
-                      View Live System
-                    </a>
-                    <a
-                      href={project.architectureUrl ?? brief.profiles.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="action-secondary"
-                    >
-                      {project.architectureUrl ? "View Architecture" : "View GitHub"}
-                    </a>
-                  </div>
-                  <div className="project-proof-grid">
-                    <div>
-                      <p className="eyebrow">Outcome</p>
-                      <p>{project.outcome}</p>
-                    </div>
-                    <div>
-                      <p className="eyebrow">Proof system</p>
-                      <p>{project.proof}</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
+                project={project}
+                index={index}
+                fallbackArchitectureUrl={brief.profiles.github}
+              />
             ))}
           </div>
         </RevealSection>
 
         <RevealSection id="contact" className="contact-panel" delayMs={200}>
-          <p className="section-kicker">Looking for</p>
-          <h2 className="section-title">
-            Startup teams that need an AI systems builder who can carry work from messy brief to reliable production workflow.
-          </h2>
-          <p className="section-body section-body-tight">{brief.need}</p>
+          <SectionHeader
+            kicker="Looking for"
+            title="Startup teams that need an AI systems builder who can carry work from messy brief to reliable production workflow."
+            body={brief.need}
+            bodyClassName="section-body-tight"
+          />
           <div className="action-row">
-            <a
-              href={brief.profiles.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="action-primary"
-            >
+            <ActionLink href={brief.profiles.linkedin} external variant="primary">
               Connect on LinkedIn
-            </a>
-            <a
-              href={brief.profiles.github}
-              target="_blank"
-              rel="noreferrer"
-              className="action-secondary"
-            >
+            </ActionLink>
+            <ActionLink href={brief.profiles.github} external variant="secondary">
               View GitHub
-            </a>
-            <a href="#systems" className="action-secondary">
+            </ActionLink>
+            <ActionLink href="#systems" variant="secondary">
               Revisit systems
-            </a>
+            </ActionLink>
           </div>
         </RevealSection>
 

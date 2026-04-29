@@ -3,6 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "npm --prefix site run dev",
-    "lint": "npm --prefix site run lint"
+    "lint": "npm --prefix site run lint",
+    "typecheck": "npm --prefix site run typecheck",
+    "build": "npm --prefix site run build",
+    "a11y:check": "npm --prefix site run a11y:check"
   }
 }

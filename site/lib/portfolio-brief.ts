@@ -7,8 +7,21 @@ export type ResumeProject = {
   proof: string;
   liveUrl: string;
   architectureUrl?: string;
+  visual?: ResumeProjectVisual;
   outcomes: readonly string[];
 };
+
+export type ResumeProjectVisual =
+  | {
+      type: "label";
+    }
+  | {
+      type: "image";
+      src: string;
+      alt: string;
+      sizes: string;
+      priority?: boolean;
+    };
 
 export type PortfolioPrinciple = {
   title: string;
@@ -20,8 +33,7 @@ export const portfolioBrief = {
   role: "AI Systems Builder",
   audience:
     "Early-stage AI startup founder or Head of Product hiring a second or third technical hire.",
-  need:
-    "They are overwhelmed by repetitive, unstructured work and need reliable systems that convert messy inputs into clear outputs without rethinking each request.",
+  need: "They are overwhelmed by repetitive, unstructured work and need reliable systems that convert messy inputs into clear outputs without rethinking each request.",
   signal:
     "Structured, fast, and dependable. The product should feel like an operational engine, not a chatbot experiment.",
   archetype: "Magician",
@@ -31,7 +43,7 @@ export const portfolioBrief = {
     github: "https://github.com/AdrianaSo123",
   },
   location: "Newark, NJ",
-  availability: "Open to AI systems engineering internships and early-stage startup roles",
+  availability: "Open to FDE and AI Product Engineer roles at startups.",
   headline:
     "I build AI systems that convert messy operational inputs into structured outputs teams can use immediately.",
   intro:
@@ -47,7 +59,8 @@ export const portfolioBrief = {
     },
     {
       value: "5",
-      label: "end-to-end AI systems delivered from ingestion and orchestration to validated outputs",
+      label:
+        "end-to-end AI systems delivered from ingestion and orchestration to validated outputs",
     },
   ] as const,
   principles: [
@@ -84,6 +97,13 @@ export const portfolioBrief = {
         "Automated document processing with PII sanitization and high-confidence data extraction.",
       proof:
         "Hexagonal architecture, comprehensive evaluation layer, and circuit breaker resilience.",
+      visual: {
+        type: "image",
+        src: "/enterprise-document.png",
+        alt: "Enterprise Document Workflow Engine visual",
+        sizes: "(max-width: 900px) 100vw, 40vw",
+        priority: true,
+      },
       liveUrl: "https://github.com/AdrianaSo123/document_intelligence_system",
       architectureUrl: "https://github.com/AdrianaSo123/document_intelligence_system",
       outcomes: [
