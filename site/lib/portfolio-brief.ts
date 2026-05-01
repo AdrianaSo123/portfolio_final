@@ -106,24 +106,6 @@ export const portfolioBrief = {
       ],
     },
     {
-      title: "OpsAI Workflow Automation Engine",
-      label: "AI-powered operations platform",
-      stack: "Python, FastAPI, Pydantic, OpenAI API, Docker",
-      summary:
-        "Designed a FastAPI-based workflow automation service that executes and validates operational tasks using AI orchestration.",
-      outcome:
-        "Automated manual operational workflows with structured logging and high test coverage.",
-      proof:
-        "Modular service architecture, pluggable workflow engine, and robust error mapping for AI integrations.",
-      liveUrl: "https://github.com/AdrianaSo123/ops_ai",
-      architectureUrl: "https://github.com/AdrianaSo123/ops_ai",
-      outcomes: [
-        "Engineered a FastAPI service with typed request/response models for reliable workflow execution.",
-        "Implemented an AI integration layer with automated retries, error mapping, and result validation.",
-        "Containerized the engine for scalable deployment and achieved high coverage through automated unit and integration tests.",
-      ],
-    },
-    {
       title: "So Studio Platform",
       label: "Voice-to-content AI workflow",
       stack: "Swift, Node.js, OpenAI API, Whisper",
@@ -139,6 +121,24 @@ export const portfolioBrief = {
         "Engineered a multi-stage pipeline (audio to transcription to LLM to validation to publishing).",
         "Built chat UX with dynamic suggestion chips for guided exploration.",
         "Implemented authentication-gated tool access for admin-only capabilities.",
+      ],
+    },
+    {
+      title: "OpsAI Workflow Automation Engine",
+      label: "AI-powered operations platform",
+      stack: "Python, FastAPI, Pydantic, OpenAI API, Docker",
+      summary:
+        "Designed a FastAPI-based workflow automation service that executes and validates operational tasks using AI orchestration.",
+      outcome:
+        "Automated manual operational workflows with structured logging and high test coverage.",
+      proof:
+        "Modular service architecture, pluggable workflow engine, and robust error mapping for AI integrations.",
+      liveUrl: "https://github.com/AdrianaSo123/ops_ai",
+      architectureUrl: "https://github.com/AdrianaSo123/ops_ai",
+      outcomes: [
+        "Engineered a FastAPI service with typed request/response models for reliable workflow execution.",
+        "Implemented an AI integration layer with automated retries, error mapping, and result validation.",
+        "Containerized the engine for scalable deployment and achieved high coverage through automated unit and integration tests.",
       ],
     },
   ] as const satisfies readonly ResumeProject[],
