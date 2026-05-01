@@ -132,8 +132,8 @@ export const portfolioBrief = {
         "Automated manual operational workflows with structured logging and high test coverage.",
       proof:
         "Modular service architecture, pluggable workflow engine, and robust error mapping for AI integrations.",
-      liveUrl: "https://github.com/AdrianaSo123/ai_operations_engine",
-      architectureUrl: "https://github.com/AdrianaSo123/ai_operations_engine",
+      liveUrl: "https://github.com/AdrianaSo123/ops_ai",
+      architectureUrl: "https://github.com/AdrianaSo123/ops_ai",
       outcomes: [
         "Engineered a FastAPI service with typed request/response models for reliable workflow execution.",
         "Implemented an AI integration layer with automated retries, error mapping, and result validation.",
