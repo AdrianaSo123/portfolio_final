@@ -106,23 +106,6 @@ export const portfolioBrief = {
       ],
     },
     {
-      title: "AI Landscape Intelligence and Monitoring Pipeline",
-      label: "Data ingestion and structuring system",
-      stack: "Python, OpenAI API, Docker",
-      summary:
-        "Built a modular ingestion pipeline that extracts and structures AI funding and capital event data from noisy sources.",
-      outcome:
-        "Enabled repeatable transformation of noisy external signals into analysis-ready structured outputs.",
-      proof:
-        "Strict JSON schema validation, test-driven iteration loops, and containerized scheduled runs.",
-      liveUrl: "https://github.com/AdrianaSo123/ordo_with_scraper",
-      architectureUrl: "https://github.com/AdrianaSo123/ordo_with_scraper",
-      outcomes: [
-        "Implemented LLM processing with strict JSON schema validation and iterative test-driven development for output reliability.",
-        "Containerized and scheduled ingestion workflows for reproducible, scalable automation without manual intervention.",
-      ],
-    },
-    {
       title: "OpsAI Workflow Automation Engine",
       label: "AI-powered operations platform",
       stack: "Python, FastAPI, Pydantic, OpenAI API, Docker",
