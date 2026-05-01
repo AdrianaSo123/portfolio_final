@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { RevealSection } from "@/components/reveal-section";
 import { ActionLink } from "@/components/action-link";
 import { MetricCard } from "@/components/metric-card";
@@ -44,7 +46,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Profile image temporarily removed */}
+          <div className="hero-image-stage">
+            <Image
+              src="/me.jpg"
+              alt={`Portrait of ${brief.ownerName}`}
+              fill
+              sizes="(max-width: 1080px) min(92vw, 520px), min(480px, 42vw)"
+              className="hero-image"
+              priority
+            />
+          </div>
         </RevealSection>
 
         <RevealSection className="metric-strip" ariaLabel="Selected metrics" delayMs={40}>

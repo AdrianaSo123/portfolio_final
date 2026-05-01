@@ -121,6 +121,11 @@ body {
   align-items: center;
 }
 
+.swiss-hero .hero-image-stage {
+  width: min(240px, 100%);
+  justify-self: end;
+}
+
 .swiss-claim {
   font-family: var(--font-display), "Cormorant Garamond", serif;
   margin-top: 1.5rem;
@@ -583,6 +588,11 @@ body {
   .swiss-footer {
     grid-template-columns: 1fr;
     gap: var(--space-xs);
+  }
+
+  .swiss-hero .hero-image-stage {
+    width: min(220px, 72vw);
+    justify-self: center;
   }
 
   .swiss-hero,
