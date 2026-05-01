@@ -14,16 +14,16 @@ function ProjectVisual({ project }: { project: ResumeProject }) {
 
   if (!visual) {
     return (
-      <div className="project-visual">
-        <p className="eyebrow">{project.label}</p>
+      <div className="project-visual project-visual--placeholder">
+        <p className="eyebrow project-visual-label">{project.label}</p>
       </div>
     );
   }
 
   if (visual.type === "label") {
     return (
-      <div className="project-visual">
-        <p className="eyebrow">{project.label}</p>
+      <div className="project-visual project-visual--placeholder">
+        <p className="eyebrow project-visual-label">{project.label}</p>
       </div>
     );
   }

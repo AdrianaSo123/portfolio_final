@@ -375,6 +375,28 @@ body {
   min-height: 100%;
 }
 
+/* Label-only “image” panel: match image rail height, center copy, avoid clipping */
+.project-visual--placeholder {
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  padding: var(--space-lg) var(--space-md);
+  box-sizing: border-box;
+}
+
+.project-visual--placeholder .project-visual-label {
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  text-wrap: balance;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  font-size: clamp(0.62rem, 1.05vw, 0.72rem);
+}
+
 .project-visual-stage {
   width: 100%;
   height: 280px;
@@ -391,7 +413,7 @@ body {
   background: var(--surface);
 }
 
-.project-visual .eyebrow {
+.project-visual:not(.project-visual--placeholder) .eyebrow {
   max-width: 90%;
   line-height: 1.4;
 }
@@ -588,6 +610,11 @@ body {
     padding: var(--space-md);
     border-right: 0;
     border-bottom: 1px solid var(--border-soft);
+  }
+
+  .project-visual--placeholder {
+    min-height: 220px;
+    padding: var(--space-lg) var(--space-md);
   }
 
   .campaign-card-alt .project-visual {

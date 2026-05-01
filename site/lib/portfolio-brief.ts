@@ -88,28 +88,21 @@ export const portfolioBrief = {
   },
   projects: [
     {
-      title: "Business Document Intelligence System",
-      label: "Enterprise Document Workflow Engine",
-      stack: "Python, FastAPI, OpenAI, Celery, Redis",
+      title: "UX Synthesizer",
+      label: "Qualitative research synthesis platform",
+      stack: "Next.js, TypeScript, OpenAI, Zod, Tailwind",
       summary:
-        "Production-grade AI system that transforms unstructured business documents into structured insights using Clean Architecture.",
+        "AI-assisted qualitative UX research synthesis: ingest transcripts, notes, and survey verbatims and produce structured insights—themes, pain points, personas, codebook, and recommendations—with grounding checks and a transcript cleanup pipeline.",
       outcome:
-        "Automated document processing with PII sanitization and high-confidence data extraction.",
+        "Researchers move from raw qualitative data to schema-valid, quote-backed outputs they can review, copy, and export—without losing traceability to the source.",
       proof:
-        "Hexagonal architecture, comprehensive evaluation layer, and circuit breaker resilience.",
-      visual: {
-        type: "image",
-        src: "/enterprise-document.png",
-        alt: "Enterprise Document Workflow Engine visual",
-        sizes: "(max-width: 900px) 100vw, 40vw",
-        priority: true,
-      },
-      liveUrl: "https://github.com/AdrianaSo123/document_intelligence_system",
-      architectureUrl: "https://github.com/AdrianaSo123/document_intelligence_system",
+        "Zod-validated analysis JSON, deterministic transcript normalization with optional LLM repair, evidence repair for ungrounded snippets, and Vitest plus Playwright coverage with CI.",
+      liveUrl: "https://so-kind-research-r9i5.vercel.app",
+      architectureUrl: "https://github.com/AdrianaSo123/soKind_research",
       outcomes: [
-        "Implemented PII sanitization and deterministic normalization for reliable data extraction.",
-        "Built a resilient pipeline with circuit breakers, retries, and automated evaluation benchmarking.",
-        "Architected the system using Ports and Adapters (Hexagonal) pattern for strict separation of concerns.",
+        "Built ingest for paste and upload (.txt, .pdf, .docx) with API extraction routes and a transcript pipeline before synthesis.",
+        "Shipped OpenAI-powered analysis behind a strict JSON schema with validation, grounding checks, and portfolio-aligned UX (status stages, inline errors, load previous export).",
+        "Implemented provenance and trust signals (demo vs live AI, canonical sourceText for evidence) and automated quality gates via lint, build, unit, and E2E tests.",
       ],
     },
     {
