@@ -427,6 +427,13 @@ body {
   object-position: center;
 }
 
+.project-visual-image--ux-synth {
+  object-fit: cover;
+  object-position: left center;
+  padding: 0;
+  background: transparent;
+}
+
 .project-visual:not(.project-visual--placeholder) .eyebrow {
   max-width: 90%;
   line-height: 1.4;

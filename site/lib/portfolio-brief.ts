@@ -7,6 +7,10 @@ export type ResumeProject = {
   proof: string;
   liveUrl: string;
   architectureUrl?: string;
+  primaryLinkLabel?: string;
+  secondaryLinkLabel?: string;
+  secondaryLinkUrl?: string;
+  hideSecondaryLink?: boolean;
   visual?: ResumeProjectVisual;
   outcomes: readonly string[];
 };
@@ -98,37 +102,20 @@ export const portfolioBrief = {
         "Researchers move from raw qualitative data to schema-valid, quote-backed outputs they can review, copy, and export—without losing traceability to the source.",
       proof:
         "Zod-validated analysis JSON, deterministic transcript normalization with optional LLM repair, evidence repair for ungrounded snippets, and Vitest plus Playwright coverage with CI.",
+      visual: {
+        type: "image",
+        src: "/ux_synth_thumbnail.png",
+        alt: "UX Synthesizer hero with insight cards and process steps",
+        sizes: "(max-width: 1080px) 100vw, 40vw",
+        priority: true,
+        className: "project-visual-image--ux-synth",
+      },
       liveUrl: "https://so-kind-research-r9i5.vercel.app",
       architectureUrl: "https://github.com/AdrianaSo123/soKind_research",
       outcomes: [
         "Built ingest for paste and upload (.txt, .pdf, .docx) with API extraction routes and a transcript pipeline before synthesis.",
         "Shipped OpenAI-powered analysis behind a strict JSON schema with validation, grounding checks, and portfolio-aligned UX (status stages, inline errors, load previous export).",
         "Implemented provenance and trust signals (demo vs live AI, canonical sourceText for evidence) and automated quality gates via lint, build, unit, and E2E tests.",
-      ],
-    },
-    {
-      title: "ShopRite LPGA Event Management Platform",
-      label: "Wakefern event operations system",
-      stack: "Angular, Ionic, Docker, Spring Boot",
-      summary:
-        "Designed the event operations UX in Figma to coordinate attendee schedules, sponsor activations, and on-site logistics for a large-scale tournament.",
-      outcome:
-        "Enabled a scalable event experience for 65,000+ attendees, replacing manual, paper-based coordination with a centralized mobile system for schedules, sponsors, and event logistics.",
-      proof:
-        "Structured sponsor-tier logic, event scheduling workflows, and admin-to-user interactions into a cohesive UX layer aligned with real-world operations.",
-      liveUrl: "https://www.shopritelpgaclassic.com/",
-      visual: {
-        type: "image",
-        src: "/wakefern_thumbnail.png",
-        alt: "Wakefern event operations app screens on a blush background",
-        sizes: "(max-width: 1080px) 100vw, 40vw",
-        priority: true,
-        className: "project-visual-image--wakefern",
-      },
-      outcomes: [
-        "Mapped sponsor tiers to activation rules so event teams could deliver consistent on-site experiences.",
-        "Translated field operations into scheduling workflows that kept volunteer, staff, and attendee touchpoints aligned.",
-        "Designed admin controls that mirrored real-world handoffs between operations, marketing, and event staff.",
       ],
     },
     {
@@ -165,6 +152,34 @@ export const portfolioBrief = {
         "Engineered a FastAPI service with typed request/response models for reliable workflow execution.",
         "Implemented an AI integration layer with automated retries, error mapping, and result validation.",
         "Containerized the engine for scalable deployment and achieved high coverage through automated unit and integration tests.",
+      ],
+    },
+    {
+      title: "UI/UX Design Internship",
+      label: "Wakefern event management",
+      stack: "Angular, Ionic, Docker, Spring Boot",
+      summary:
+        "Led the UX for Wakefern's event management platform, translating complex sponsor and scheduling requirements into a usable mobile experience.",
+      outcome:
+        "Enabled a scalable event experience for 65,000+ attendees, replacing manual, paper-based coordination with a centralized mobile system for schedules, sponsors, and event logistics.",
+      proof:
+        "Structured sponsor-tier logic, event scheduling workflows, and admin-to-user interactions into a cohesive UX layer aligned with real-world operations.",
+      liveUrl:
+        "https://www.figma.com/proto/aGTYDY2fXYfnmU3NFqC7lj/LGPA-App-Wireframes--Copy-?node-id=0-1&t=j6r3OuIYYLuBqZto-1",
+      primaryLinkLabel: "View Figma",
+      hideSecondaryLink: true,
+      visual: {
+        type: "image",
+        src: "/wakefern_thumbnail.png",
+        alt: "Wakefern event operations app screens on a blush background",
+        sizes: "(max-width: 1080px) 100vw, 40vw",
+        priority: true,
+        className: "project-visual-image--wakefern",
+      },
+      outcomes: [
+        "Mapped sponsor tiers to activation rules so event teams could deliver consistent on-site experiences.",
+        "Translated field operations into scheduling workflows that kept volunteer, staff, and attendee touchpoints aligned.",
+        "Designed admin controls that mirrored real-world handoffs between operations, marketing, and event staff.",
       ],
     },
   ] as const satisfies readonly ResumeProject[],

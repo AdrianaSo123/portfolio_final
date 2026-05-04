@@ -51,6 +51,10 @@ function ProjectVisual({ project }: { project: ResumeProject }) {
 export function ProjectCard({ project, index, fallbackArchitectureUrl }: ProjectCardProps) {
   const cardClassName = `campaign-card ${index % 2 === 1 ? "campaign-card-alt" : ""}`.trim();
   const architectureUrl = project.architectureUrl ?? fallbackArchitectureUrl;
+  const secondaryLinkUrl = project.secondaryLinkUrl ?? architectureUrl;
+  const secondaryLinkLabel =
+    project.secondaryLinkLabel ?? (project.architectureUrl ? "View Architecture" : "View GitHub");
+  const primaryLinkLabel = project.primaryLinkLabel ?? "View Live System";
 
   return (
     <article className={cardClassName}>
@@ -61,11 +65,13 @@ export function ProjectCard({ project, index, fallbackArchitectureUrl }: Project
         <p className="project-stack">{project.stack}</p>
         <div className="project-action-row">
           <ActionLink href={project.liveUrl} external variant="primary">
-            View Live System
+            {primaryLinkLabel}
           </ActionLink>
-          <ActionLink href={architectureUrl} external variant="secondary">
-            {project.architectureUrl ? "View Architecture" : "View GitHub"}
-          </ActionLink>
+          {!project.hideSecondaryLink && (
+            <ActionLink href={secondaryLinkUrl} external variant="secondary">
+              {secondaryLinkLabel}
+            </ActionLink>
+          )}
         </div>
         <div className="project-proof-grid">
           <div>
