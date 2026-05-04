@@ -122,7 +122,7 @@ body {
 }
 
 .swiss-hero .hero-image-stage {
-  width: min(240px, 100%);
+  width: min(400px, 100%);
   justify-self: end;
 }
 
@@ -437,7 +437,7 @@ body {
 .project-visual-image--ux-synth {
   object-fit: cover;
   object-position: top left;
-  transform: scale(1.18) translate(-44px, -32px);
+  transform: scale(1.22) translate(-84px, -44px);
   transform-origin: top left;
   padding: 0;
   background: transparent;
@@ -616,7 +616,7 @@ body {
   }
 
   .swiss-hero .hero-image-stage {
-    width: min(220px, 72vw);
+    width: min(380px, 92vw);
     justify-self: center;
   }
 
