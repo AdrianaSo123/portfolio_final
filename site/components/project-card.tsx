@@ -36,7 +36,11 @@ function ProjectVisual({ project }: { project: ResumeProject }) {
           alt={visual.alt}
           fill
           sizes={visual.sizes}
-          className="project-visual-image"
+          className={
+            visual.className
+              ? `project-visual-image ${visual.className}`
+              : "project-visual-image"
+          }
           priority={visual.priority}
         />
       </div>

@@ -21,6 +21,7 @@ export type ResumeProjectVisual =
       alt: string;
       sizes: string;
       priority?: boolean;
+      className?: string;
     };
 
 export type PortfolioPrinciple = {
@@ -82,7 +83,7 @@ export const portfolioBrief = {
   ] as const satisfies readonly PortfolioPrinciple[],
   quote: {
     quote:
-      "Adriana consistently turned ambiguous business requests into clear, executable workflow structures with strong UX judgment.",
+      "Adriana has helped create a beautiful and functional app for the Shoprite Classic LGPA Pro Am. The users love how easy it is.",
     attribution: "Wakefern leadership feedback",
     role: "UX and AI Systems Internship",
   },
@@ -103,6 +104,31 @@ export const portfolioBrief = {
         "Built ingest for paste and upload (.txt, .pdf, .docx) with API extraction routes and a transcript pipeline before synthesis.",
         "Shipped OpenAI-powered analysis behind a strict JSON schema with validation, grounding checks, and portfolio-aligned UX (status stages, inline errors, load previous export).",
         "Implemented provenance and trust signals (demo vs live AI, canonical sourceText for evidence) and automated quality gates via lint, build, unit, and E2E tests.",
+      ],
+    },
+    {
+      title: "ShopRite LPGA Event Management Platform",
+      label: "Wakefern event operations system",
+      stack: "Angular, Ionic, Docker, Spring Boot",
+      summary:
+        "Designed the event operations UX in Figma to coordinate attendee schedules, sponsor activations, and on-site logistics for a large-scale tournament.",
+      outcome:
+        "Enabled a scalable event experience for 65,000+ attendees, replacing manual, paper-based coordination with a centralized mobile system for schedules, sponsors, and event logistics.",
+      proof:
+        "Structured sponsor-tier logic, event scheduling workflows, and admin-to-user interactions into a cohesive UX layer aligned with real-world operations.",
+      liveUrl: "https://www.shopritelpgaclassic.com/",
+      visual: {
+        type: "image",
+        src: "/wakefern_thumbnail.png",
+        alt: "Wakefern event operations app screens on a blush background",
+        sizes: "(max-width: 1080px) 100vw, 40vw",
+        priority: true,
+        className: "project-visual-image--wakefern",
+      },
+      outcomes: [
+        "Mapped sponsor tiers to activation rules so event teams could deliver consistent on-site experiences.",
+        "Translated field operations into scheduling workflows that kept volunteer, staff, and attendee touchpoints aligned.",
+        "Designed admin controls that mirrored real-world handoffs between operations, marketing, and event staff.",
       ],
     },
     {
