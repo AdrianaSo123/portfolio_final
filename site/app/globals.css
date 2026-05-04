@@ -427,9 +427,18 @@ body {
   object-position: center;
 }
 
+.project-visual-image--so-studio {
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1.14) translate(0, -12px);
+  transform-origin: top center;
+}
+
 .project-visual-image--ux-synth {
   object-fit: cover;
-  object-position: left center;
+  object-position: top left;
+  transform: scale(1.18) translate(-44px, -32px);
+  transform-origin: top left;
   padding: 0;
   background: transparent;
 }

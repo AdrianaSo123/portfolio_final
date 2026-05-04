@@ -128,6 +128,14 @@ export const portfolioBrief = {
         "Delivered a working pipeline from raw voice to validated publishable content and guided retrieval.",
       proof:
         "Multi-stage orchestration, suggestion-based chat UX, and authentication-gated admin tooling.",
+      visual: {
+        type: "image",
+        src: "/so_studio.png",
+        alt: "So Studio product flow with app UI panels",
+        sizes: "(max-width: 1080px) 100vw, 40vw",
+        priority: true,
+        className: "project-visual-image--so-studio",
+      },
       liveUrl: "https://so-studio-pi.vercel.app/",
       architectureUrl: "https://github.com/AdrianaSo123/autoSite",
       outcomes: [
