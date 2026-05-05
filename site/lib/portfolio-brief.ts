@@ -163,7 +163,7 @@ export const portfolioBrief = {
       ],
     },
     {
-      title: "UI/UX Design Internship",
+      title: "Wakefern LPGA Event Management Platform",
       label: "Wakefern event management",
       stack: "Angular, Ionic, Docker, Spring Boot",
       summary:
