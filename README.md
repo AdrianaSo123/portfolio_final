@@ -18,10 +18,10 @@ integrated into real decision-making workflows.
 Combined impact
 - Together, these projects demonstrate the ability to build AI systems across two critical layers:
   - Insight layer (UX Synthesizer): structuring ambiguous human data into reliable, usable outputs
-  - Execution layer (OpsAI): translating structured intent into governed, real-world actions
+  - Critique layer (UX-ai-critique): generating multi-agent UX audits and prioritized design recommendations
 - While infrastructure-level concerns (deployment, monitoring, scaling) remain as future work,
   these projects establish a strong foundation in:
   - Structured LLM integration
-  - Workflow orchestration
+  - Multi-agent orchestration
   - Reliability and validation
   - Human-centered AI system design

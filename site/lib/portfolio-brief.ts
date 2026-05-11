@@ -173,21 +173,21 @@ export const portfolioBrief = {
       ],
     },
     {
-      title: "OpsAI Workflow Automation Engine",
-      label: "AI-powered operations platform (coming soon)",
-      stack: "Python, FastAPI, Pydantic, OpenAI API, Docker",
+      title: "UX Design Analyzer (UX-ai-critique)",
+      label: "Autonomous UX audit agents",
+      stack: "JavaScript/Node.js, Playwright, multi-agent AI",
       summary:
-        "Designed a FastAPI-based workflow automation service that executes and validates operational tasks using AI orchestration. Coming soon (in progress).",
+        "Built an automated UX design analyzer that captures website screenshots and produces actionable design critique through six specialized AI agents.",
       outcome:
-        "Automated manual operational workflows with structured logging and high test coverage.",
+        "Generates prioritized UX recommendations and downloadable reports for any URL.",
       proof:
-        "Modular service architecture, pluggable workflow engine, and robust error mapping for AI integrations.",
-      liveUrl: "https://github.com/AdrianaSo123/ops_ai",
-      architectureUrl: "https://github.com/AdrianaSo123/ops_ai",
+        "Browser automation + multi-agent analysis synthesized into structured, shareable critique reports.",
+      liveUrl: "https://github.com/AdrianaSo123/UX-ai-critique",
+      architectureUrl: "https://github.com/AdrianaSo123/UX-ai-critique",
       outcomes: [
-        "Engineered a FastAPI service with typed request/response models for reliable workflow execution.",
-        "Implemented an AI integration layer with automated retries, error mapping, and result validation.",
-        "Containerized the engine for scalable deployment and achieved high coverage through automated unit and integration tests.",
+        "Automated screenshot capture across responsive breakpoints using Playwright.",
+        "Orchestrated six specialist agents (UX, interaction, typography, visual, responsive, accessibility) into a unified critique.",
+        "Generated structured reports (JSON/text) with prioritized recommendations and implementation guidance.",
       ],
     },
   ] as const satisfies readonly ResumeProject[],
