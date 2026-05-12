@@ -6,6 +6,10 @@ The site source lives in `site/`. See `site/README.md` for local setup and scrip
 
 ## Project notes
 
+UX Design Analyzer (UX-ai-critique)
+- Live demo: https://ux-ai-critique-1.onrender.com
+- GitHub: https://github.com/AdrianaSo123/UX-ai-critique
+
 UX Research Synthesizer addresses gaps in AI product design and structured outputs by:
 - Converting unstructured research data into structured, schema-constrained insights
 - Enforcing deterministic JSON outputs to reduce hallucination and improve reliability

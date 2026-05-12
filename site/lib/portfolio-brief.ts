@@ -182,8 +182,11 @@ export const portfolioBrief = {
         "Generates prioritized UX recommendations and downloadable reports for any URL.",
       proof:
         "Browser automation + multi-agent analysis synthesized into structured, shareable critique reports.",
-      liveUrl: "https://github.com/AdrianaSo123/UX-ai-critique",
+      liveUrl: "https://ux-ai-critique-1.onrender.com",
+      primaryLinkLabel: "View Live Demo",
       architectureUrl: "https://github.com/AdrianaSo123/UX-ai-critique",
+      secondaryLinkLabel: "View GitHub",
+      secondaryLinkUrl: "https://github.com/AdrianaSo123/UX-ai-critique",
       outcomes: [
         "Automated screenshot capture across responsive breakpoints using Playwright.",
         "Orchestrated six specialist agents (UX, interaction, typography, visual, responsive, accessibility) into a unified critique.",

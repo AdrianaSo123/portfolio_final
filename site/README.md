@@ -48,6 +48,9 @@ While these projects do not yet include full production infrastructure (e.g., cl
 
 ### UX Design Analyzer (UX-ai-critique)
 
+- Live demo: https://ux-ai-critique-1.onrender.com
+- GitHub: https://github.com/AdrianaSo123/UX-ai-critique
+
 The UX Design Analyzer addresses gaps in autonomous evaluation and critique by:
 
 - Capturing website screenshots across responsive breakpoints (browser automation)
