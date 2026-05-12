@@ -443,6 +443,12 @@ body {
   background: transparent;
 }
 
+.project-visual-image--ux-analyzer {
+  object-fit: cover;
+  object-position: top left;
+  transform: none;
+}
+
 .project-visual:not(.project-visual--placeholder) .eyebrow {
   max-width: 90%;
   line-height: 1.4;

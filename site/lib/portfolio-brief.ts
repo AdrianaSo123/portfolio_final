@@ -182,6 +182,14 @@ export const portfolioBrief = {
         "Generates prioritized UX recommendations and downloadable reports for any URL.",
       proof:
         "Browser automation + multi-agent analysis synthesized into structured, shareable critique reports.",
+      visual: {
+        type: "image",
+        src: "/ux-analyzer.png",
+        alt: "UX Design Analyzer interface with agent metrics and URL input",
+        sizes: "(max-width: 1080px) 100vw, 40vw",
+        priority: true,
+        className: "project-visual-image--ux-analyzer",
+      },
       liveUrl: "https://ux-ai-critique-1.onrender.com",
       primaryLinkLabel: "View Live Demo",
       architectureUrl: "https://github.com/AdrianaSo123/UX-ai-critique",
